@@ -39,14 +39,31 @@ const pizzaData = [
     ingredients: "Tomato, mozarella, ham, aragula, and burrata cheese",
     price: 18,
     photoName: "pizzas/prosciutto.jpg",
-    soldOut: false,
+    soldOut: true,
   },
 ];
 
 function Pizza() {
-  return <div>
-    <h1>Pizza</h1>
-  </div>;
+  const pizzas = pizzaData.map((p) => (
+    <li key={p.name} className={`pizza ${p.soldOut ? 'sold-out' : ''}`}>
+      <img src={p.photoName} alt={p.name} />
+      <div>
+        <h3>{p.name}</h3>
+        <p>{p.ingredients}</p>
+        <span>{p.price}$</span>
+      </div>
+    </li>
+  ));
+
+  return (
+    <div>
+      <center style={{ marginBottom: "2rem" }}>
+              <h2 className ="center">Our Pizzas</h2>
+              
+      </center>
+      <ul className="pizzas">{pizzas}</ul>
+    </div>
+  );
 }
 
 export default Pizza;
