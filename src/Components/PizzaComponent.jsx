@@ -57,10 +57,6 @@ function Pizza() {
 
   return (
     <div>
-      <center style={{ marginBottom: "2rem" }}>
-              <h2 className ="center">Our Pizzas</h2>
-              
-      </center>
       <ul className="pizzas">{pizzas}</ul>
     </div>
   );
